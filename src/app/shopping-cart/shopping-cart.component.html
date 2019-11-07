@@ -1,0 +1,79 @@
+<div class="content">
+  <div class="heading">
+    <h2>YOUR SHOPPING CART</h2>      
+  </div>
+  <div class="shopping">
+    <div class="product_list">
+      <div class="cart">
+      You have {{cart.length}} Items added to your shopping cart 
+      </div>
+      <div class="itemRow" *ngFor = "let product of cart; let i = index">
+      <div class="item_details">
+        <div class="close_btn">
+          <i class="fa fa-close" (click) = "removeItem(i)"></i>
+        </div>
+        <div class="product_image">
+          <img src="{{product.img}}" width="100%" height="100%">
+        </div>
+        <div class="product_details">
+          {{product.name}}
+        </div>
+      </div>
+      <div class="quantity">       
+        <div class="product_details">
+          Rs {{product.price}}
+        </div>       
+        <div class="product_details">
+          <i class="fa fa-times"></i>
+        </div>
+        <div class="product_details">
+          <input type="number" min="1" max="5" [(ngModel)]="product.qty" class="numberBox" (keyup)="calculateTotal($event)">
+        </div>
+      </div>
+      <div class="amount">       
+        <div class="product_details">
+          Rs {{product.qty * product.price}}
+        </div>
+      </div>
+      </div>
+      <div class="itemRow">
+      <div class="item_details">
+        <span class="emptyCart" href="#" (click)="emptyCart()">Empty your cart</span>    
+      </div>
+      <div class="quantity">        
+      </div>
+      <div class="amount">       
+        <div class="product_details">
+         Subtotal: Rs {{subTotal}}
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="checkout">
+      <div class="itemRow">
+      <div class="item_details">
+         Subtotal
+      </div>
+      <div class="quantity">       
+      </div>
+        <div class="product_details">
+          Rs {{subTotal}}
+        </div>
+      </div>
+      <div class="itemRow">
+      <div class="item_details">
+        Shipping Cost
+      </div>
+      <div class="quantity">
+      </div>
+      <div class="product_details">
+        Rs 150
+      </div>
+      </div>
+    
+      <div class="itemRow">
+        <button type="button" class="proceed_checkout" title="ADD TO CART">PROCEED TO CHECKOUT</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+.searchBox  {
+  float:left;
+}
+.responsiveSearch{
+  display:none;
+}
+.searchBox input{
+  width:200px;
+  border-radius:3px 0px 0px 3px;
+  background:#f5f5f5;
+  padding:10px;
+  border:0px;
+  height:40px;
+  box-sizing:border-box;
+  border-radius: 20px 0px 0px 20px;
+  color:#2f2f2f;
+  outline:none;
+}
+.searchBtn{  
+  margin-top:18px;
+  width:60px;
+  height:40px;
+  box-sizing:border-box;
+  padding:10px;
+  border-radius:0px 20px 20px 0px;
+  background:#f5f5f5;
+  color:#2f2f2f;
+  outline:none;
+  border:0px;  
+  box-sizing:border-box;
+}
+.logo{
+    background:url(../../assets/images/logo.jpg) no-repeat left top;
+    width:264px;
+    height:54px;
+    margin:10px 0px;
+}
+
+.nav-ul li {
+  list-style-type: none;
+}
+
+.nav-ul li a {
+  text-decoration:none;
+  font-size:0.9em;
+  font-family: "Segoe UI", "Verdana";
+}
+
+.topnav {
+  width:100%;
+  font-family: "Segoe UI", "Verdana";
+  border-top:1px solid #dadada;
+  border-bottom:1px solid #dadada;
+  min-height:53px;
+  margin-bottom:10px;
+}
+.topnav a.active{
+  color:#a14c03!important;
+}
+
+.topnav a {
+  color:#535353;
+  font-size: 14px;
+  letter-spacing: 3px;
+  padding:17px 1%;
+  display:inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.topnav a:hover {
+  color:#a14c03!important;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav.responsive a {
+    display: block;
+    text-align: left;
+    clear:both;
+  }
+  .fullSearch{
+    display:none;
+  }
+  .responsiveSearch{
+    display:block;
+    margin-top:-10px;
+  }
+  .topnav {
+    width:100%;
+    font-family: "Segoe UI", "Verdana";
+    min-height:none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.loginField{
+  width:125px;
+  float:left;
+  padding:5px;
+  font-size:12px;
+  border:1px solid #eee;
+  border-radius:5px;
+  margin-right:5px;
+}
+.submitButton{
+  float:left;
+  padding:5px;
+  font-size:12px;
+  color:#fff;
+  background:#cdcc78;
+  border-radius:3px;
+  width:60px;
+  border:0px;
+}
+.fa-shopping-cart::after{
+  content: attr(myValue);
+  background: #ff9900;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+  position: absolute;
+  padding: 5px;
+  width:12px;
+  height:12px;
+  margin-left: -5px;
+  text-align:center;
+  margin-top: -10px;
+  z-index:-1;
+}

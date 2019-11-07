@@ -1,0 +1,12 @@
+<div class="product">
+    <img src={{imgInput}}>
+    <div class="details">
+      {{description}}
+    </div>  
+    <div class="price">
+      Rs {{price}}/-
+    </div>
+    <div class="add_to_cart">
+      <button type="button" title="ADD TO CART" (click)="addToCart(imgInput,description,price,id)">ADD TO CART</button>
+    </div>
+</div>

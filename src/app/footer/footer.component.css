@@ -1,0 +1,26 @@
+.footer {
+  text-align:center;
+  font-size:12px;
+  margin-top:15px;  
+  margin-bottom:15px;
+  clear:both;
+  color:#999;
+  font-family: "Segoe UI";
+  letter-spacing: 1px;
+}
+ul.socialIcons {
+  margin:10px 0px;
+  padding:0px;
+  list-style-type:none;
+  clear:both;
+}
+.socialIcons li {
+  float:left;
+}
+.socialIcons li a {
+  padding: 1em 2em;
+  color:#999;
+}
+.socialIcons li a:hover {
+  color:#000000;
+}

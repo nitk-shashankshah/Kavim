@@ -1,0 +1,39 @@
+.wrapper{
+    width:90%;
+    margin:0px 5%;
+    position: absolute;
+    z-index:0;
+}
+@media screen and (max-width: 1000px) {
+    .wrapper{
+      width:100%;
+      max-width:unset;      
+      margin:0px;
+    }  
+  }
+.message{
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:5px;
+    z-index:100;
+    box-shadow: 0px 0px 5px 0px #333;
+    font-family:"Segoe UI";
+    text-align:center;
+    font-size:22px;
+    font-weight:normal;
+    box-sizing:border-box;
+    padding:20px;
+    height:75px;
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+}
+
+.close{
+    position: absolute;
+    right:5px;
+    top:0px;
+    cursor:pointer;
+    color:#333;
+    z-index:200;
+}
