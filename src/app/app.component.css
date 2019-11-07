@@ -1,16 +1,7 @@
 .wrapper{
-    width:90%;
-    margin:0px 5%;
-    position: absolute;
-    z-index:0;
+  width:90%;
+  margin:0px auto;
 }
-@media screen and (max-width: 1000px) {
-    .wrapper{
-      width:100%;
-      max-width:unset;      
-      margin:0px;
-    }  
-  }
 .message{
     background:#fff;
     border:1px solid #ccc;
