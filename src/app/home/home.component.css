@@ -3,14 +3,19 @@
 }
 .banner{
   width:65%;
-  background: url(../../assets/images/banner2.jpg) no-repeat right -20px;
-  background-size:cover;
-  height:377px;
+  background: url(../../assets/images/banner2.jpg) no-repeat right 0px;
   margin:10px 0px;
+  max-width: 930px;
   float:left;
+  background-size: unset!important;
+  background-repeat: no-repeat;
+  height: 0;
+  padding-top: 45%;
+  box-sizing: border-box;
 }
 .filters{
   width:35%;
+  max-width:966px;
   float:right;
   font-family: "Segoe UI";
   padding-left:20px;
@@ -19,8 +24,8 @@
 
 @media screen and (max-width: 800px) {
   .banner{
-    width:100%;
-    max-width:unset;
+    width:100%;    
+    background-size: cover!important;
   }
   .filters{
     width:100%;

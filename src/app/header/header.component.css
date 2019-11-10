@@ -93,6 +93,11 @@
   .responsiveSearch{
     display:block;
     margin-top:-10px;
+    width:70%!important;
+  }
+  
+  .responsiveSearch input{
+    width:55%!important;
   }
   .topnav {
     width:100%;
