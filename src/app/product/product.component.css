@@ -6,9 +6,22 @@
   /*flex:1;*/
   flex: 0 0 33%;
   margin-bottom: 5px;
+  cursor:pointer;
+}
+.product:hover img{
+  box-shadow: 0px 0px 35px 0px #c9c9c9;
+}
+.add_to_cart {
+  display: none;
+  margin-top:-150px;
+}
+.product:hover .add_to_cart{
+  display: block;
+  margin-top:-150px;
 }
 .product img{
  width:100%;
+ box-sizing: border-box;
 }
 @media screen and (max-width: 719px) {
   .product img{
@@ -20,7 +33,7 @@
     width:330px;
   }
   .product{
-    height:650px;
+    height:600px;
   }
 }
 
@@ -29,7 +42,7 @@
     width:375px;
   }
   .product{
-    height:700px;
+    height:650px;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 933px) {
@@ -54,7 +67,7 @@
     width:420px;
   }
   .product{
-    height:780px;
+    height:730px;
   }
 }
 @media screen and (min-width: 1100px) and (max-width: 1175px) {
@@ -62,7 +75,7 @@
     width:450px;
   }
   .product{
-    height:820px;
+    height:770px;
   }
 }
 
@@ -71,7 +84,7 @@
     width:480px;
   }
   .product{
-    height:850px;
+    height:800px;
   }
 }
 @media screen and (min-width: 1200px) and (max-width: 1232px) {
@@ -79,7 +92,7 @@
     width:450px;
   }  
   .product{
-    height:830px;
+    height:780px;
   }
 }
 @media screen and (min-width: 1233px) and (max-width: 1280px) {
@@ -87,7 +100,7 @@
     width:340px;
   }
   .product{
-    height:670px;
+    height:620px;
   }
 }
 
@@ -96,7 +109,7 @@
     width:350px;
   }
   .product{
-    height:680px;
+    height:630px;
   }
 }
 
@@ -105,7 +118,7 @@
     width:370px;
   }
   .product{
-    height:700px;
+    height:650px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -113,7 +126,7 @@
     width:400px;
   }
   .product{
-    height:750px;
+    height:700px;
   } 
 }
 
@@ -134,6 +147,11 @@
   color:#bc7068;
   clear:both;
 }
+.add_to_cart {
+  width:320px;
+  text-align:center;
+  margin:0px auto;
+}
 .add_to_cart button{
   text-align:center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -147,10 +165,17 @@
   border:none;
   box-sizing:border-box;
   padding:5px;
-  display:block;
+  display:inline-block;
   height:37px;
   width:150px;
 }
+
+.add_to_cart button:nth-child(2){
+  background:#efefef;
+  border:1px solid #333;
+  color:#333;
+}
+
 .add_to_cart button:hover {
   background:#fff;
   border:1px solid #333;
