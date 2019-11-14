@@ -8,11 +8,14 @@ export class CartServiceService {
   cart:any=[];
   private success = new BehaviorSubject<boolean>(false);
   private clicked = new BehaviorSubject<boolean>(false);
+  private showDetails = new BehaviorSubject<boolean>(false);
+
   private cartItems = new BehaviorSubject<any>(0);
 
   successShowHide$ = this.success.asObservable();
   clickedService$ = this.clicked.asObservable();
   cartItemsService$ = this.cartItems.asObservable();
+  showDetails$ = this.showDetails.asObservable();
 
   constructor() {
     this.emptyCart();
@@ -53,5 +56,13 @@ export class CartServiceService {
     } else {
       this.success.next(false);
     }
+  }
+
+  viewDetails(imgInput,description,price,ind) {
+    this.showDetails.next(true);
+  }
+
+  closeDetails() {
+    this.showDetails.next(false);
   }
 }
