@@ -1,6 +1,7 @@
 .details{
   display:flex;
   flex-direction: row;
+  justify-content: space-even;
   padding:50px 20px;
   box-sizing: border-box;
   position:fixed;
@@ -11,11 +12,15 @@
   border:2px solid #dcdcdc;
   border-radius: 10px;
   width: 90vw;
-  height: 95vh;
 }
+
+@media screen and (min-width: 801px) {
 .product img {
-  height:100%;
-  padding:10px;
+  width:100%;
+}
+.description{
+  padding-left:10px;
+}
 }
 @media screen and (max-width: 800px) {
   .details{
@@ -27,6 +32,9 @@
   .details{
     clear:both;
     height: 100vh;
+  }
+  .description{
+    clear:both;
   }
   .product img {
     height:40vh;
@@ -98,9 +106,8 @@
 
 .close button{
   font-size: 24px;
-  border: 3px solid #767676;
-  border-radius: 50%;
-  background:#fff;  
+  border: 0px solid #767676;
+  background:#f7f7f7;  
   height: 40px;
   width: 40px;
   padding-top: 3px;

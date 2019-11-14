@@ -58,7 +58,7 @@ export class CartServiceService {
     }
   }
 
-  viewDetails(imgInput,description,price,ind) {
+  viewDetails() {
     this.showDetails.next(true);
   }
 
