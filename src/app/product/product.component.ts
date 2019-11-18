@@ -21,7 +21,5 @@ export class ProductComponent implements OnInit {
   addToCart(imgInput,description,price,id) {
     this.cartService.addItem(imgInput,description,price,id);
   }
-  viewDetails() {
-    this.cartService.viewDetails();
-  }
+
 }
