@@ -10,7 +10,7 @@
   </ul>-->
   <ul class="flex nav-ul">
     <!--<li><a href="#"><i class="fa fa-user" style="font-size: 24px;color:#5c5c5c;"></i> <span style="line-height: 24px;"></span></a></li>-->
-    <li><a href="cart"><i class="fa fa-shopping-cart" style="font-size: 24px;color:#5c5c5c;" [attr.myValue]="cartItems"></i></a></li>
+    <li><a routerLink="/cart"><i class="fa fa-shopping-cart" style="font-size: 24px;color:#5c5c5c;" [attr.myValue]="cartItems"></i></a></li>
   </ul>
 </div>
 </div>
@@ -19,11 +19,11 @@
     <input type="text" placeholder="Search"> 
     <button type="submit" class="searchBtn"><i class="fa fa-search"></i></button>
   </div>
-  <a routerLink="" routerLinkActive="active">Home</a>
+  <a routerLink="/index" routerLinkActive="active">Home</a>
   <a routerLink="/products" routerLinkActive="active">Products</a>
   <a routerLink="/contact" routerLinkActive="active">Contact</a>
-  <a routerLink="/cart" routerLinkActive="active">About</a>
-  <a href="cart">Shopping Cart</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <a routerLink="/cart" routerLinkActive="active">Shopping Cart</a>
   <a routerLink="/track" routerLinkActive="active">Track your order</a>
   <a href="javascript:void(0);" class="icon" (click)="myFunction()">
     <i class="fa fa-bars"></i>

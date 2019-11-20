@@ -4,11 +4,11 @@
       {{description}}
     </div>  
     <div class="price">
-      Rs {{price}}/-
+      Rs {{price}}
     </div>
     <div class="add_to_cart">
       <button type="button" title="ADD TO CART" (click)="addToCart(imgInput,description,price,id)">ADD TO CART</button>
       <br>
-      <a href="/details/{{id}}">VIEW DETAILS</a>
+      <a routerLink="/details/{{id}}"  routerLinkActive="active">VIEW DETAILS</a>
     </div>
 </div>

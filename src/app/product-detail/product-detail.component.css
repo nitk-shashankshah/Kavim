@@ -40,6 +40,12 @@
     top:0px;
     left:0px;
   }
+  .prev {
+    left:-35px;
+  } 
+  .next {
+    right:-35px;
+  }
 }
 .product img {
   width:100%;
