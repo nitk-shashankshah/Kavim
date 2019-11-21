@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductComponent } from '../product/product.component';
+import { HttpClient } from "@angular/common/http";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,21 @@ import { ProductComponent } from '../product/product.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+	private subscriber: any;
+  products: any = [];
 
-  constructor() { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { 
+  }
 
   ngOnInit() {
+
+    this.subscriber = this.route.params.subscribe(params => {
+       
+    this.http.get('http://107.180.28.166:3000/api/v1/users').subscribe((data:any) => {
+      this.products = data;   
+    });
+   });
+
   }
 
 }

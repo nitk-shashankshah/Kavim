@@ -1,3 +1,7 @@
+//nvm install v6.8.0
+//nvm use --delete-prefix v13.1.0
+//npm start
+
 import { Component } from '@angular/core';
 import { CartServiceService } from './cart-service.service';
 import { Subscription } from 'rxjs';

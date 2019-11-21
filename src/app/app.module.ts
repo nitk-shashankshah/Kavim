@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from  '@angular/forms';
 import { CartServiceService } from './cart-service.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +26,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     BrowserModule,
     AppRoutingModule,    
     AngularFontAwesomeModule,    
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [CartServiceService],
   bootstrap: [AppComponent]

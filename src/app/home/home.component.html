@@ -12,20 +12,6 @@
     <h2>CATALOG</h2>
   </div>  
   <div class="row">
-    <app-product imgInput="../../assets/images/prod-3.jpg" description="Block Printed Palazzo" price="300" id="1"></app-product>
-    <app-product imgInput="../../assets/images/prod-7.jpg" description="Block Printed Skirt" price="350"  id="2"></app-product>
-    <app-product imgInput="../../assets/images/prod-6.jpg" description="Block Printed Palazzo" price="500" id="3"></app-product>
-
-    <app-product imgInput="../../assets/images/prod-8.jpg" description="Block Printed Skirt" price="450" id="4"></app-product>  
-    <app-product imgInput="../../assets/images/prod-9.jpg" description="Block Printed Palazzo" price="400" id="7"></app-product>
-    <app-product imgInput="../../assets/images/prod-1.jpg" description="Block Printed Skirt" price="450" id="8"></app-product>
-
-    <app-product imgInput="../../assets/images/prod-4.jpg" description="Block Printed Skirt" price="240" id="9"></app-product>
-    <app-product imgInput="../../assets/images/prod-2.jpg" description="Block Printed Palazzo" price="400" id="6"></app-product>
-    <app-product imgInput="../../assets/images/prod-11.jpg" description="Block Printed Skirt" price="240" id="5"></app-product>
-
-    <app-product imgInput="../../assets/images/prod-5.jpg" description="Block Printed Skirt" price="240" id="5"></app-product>
-    <app-product imgInput="../../assets/images/prod-10.jpg" description="Encrusted Jutti" price="240" id="5"></app-product>
-    <app-product imgInput="../../assets/images/jutti.jpg" description="Rajasthani" price="240" id="5"></app-product>
+    <app-product *ngFor="let product of products" imgInput={{product.imageUrl}} description={{product.description}} price={{product.price}} id={{product.id}}></app-product>    
   </div>
 </div>
