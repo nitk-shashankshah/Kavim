@@ -12,6 +12,7 @@ import { FormsModule } from  '@angular/forms';
 import { CartServiceService } from './cart-service.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,    
-    AngularFontAwesomeModule,    
+    AppRoutingModule,
+    AngularFontAwesomeModule,
     FormsModule,
     HttpClientModule
   ],

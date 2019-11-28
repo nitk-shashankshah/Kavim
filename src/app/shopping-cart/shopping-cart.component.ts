@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartServiceService } from '../cart-service.service';
+//import { CartServiceService } from '../cart-service.service';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
@@ -10,24 +10,24 @@ export class ShoppingCartComponent implements OnInit {
   cart:any=[];
   subTotal:number=0;
 
-  constructor(private cartService:CartServiceService) {
-    this.cartService.getCart().map(x => this.cart.push(x));
-    this.subTotal=this.cartService.refreshTotal();
+  constructor(/*private cartService:CartServiceService*/) {
+    //this.cartService.getCart().map(x => this.cart.push(x));
+    //this.subTotal=this.cartService.refreshTotal();
   }
 
   emptyCart(){
-    this.cartService.emptyCart();
+    //this.cartService.emptyCart();
   }
 
   removeItem(i){
-    this.cartService.removeItem(i);
+    //this.cartService.removeItem(i);
     this.cart=[];
-    this.cartService.getCart().map(x => this.cart.push(x));
+    //this.cartService.getCart().map(x => this.cart.push(x));
     this.refreshTotal();
   }
 
   refreshTotal(){
-    this.subTotal=this.cartService.refreshTotal();
+    //this.subTotal=this.cartService.refreshTotal();
   }
 
   calculateTotal(ev){

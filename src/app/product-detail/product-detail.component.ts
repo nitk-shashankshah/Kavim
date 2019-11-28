@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { ActivatedRoute } from '@angular/router';
-import { CartServiceService } from '../cart-service.service';
-import { Location } from '@angular/common';
+//import { CartServiceService } from '../cart-service.service';
+//import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-detail',
@@ -10,13 +10,12 @@ import { Location } from '@angular/common';
 })
 export class ProductDetailComponent implements OnInit {
 
-  id: string;  
+  id: string;
   slideIndex:any = 1;
-  private sub: any;
-  constructor(private location: Location, private cartService:CartServiceService) {
+  //private sub: any;
+  constructor(/*private location: Location*/) {
   }
 
-  
   plusSlides(n) {
     this.showSlides(this.slideIndex += n);
   }
@@ -54,6 +53,6 @@ export class ProductDetailComponent implements OnInit {
     
   }
   closeBox(){
-    this.location.back();
+    //this.location.back();
   }
 }

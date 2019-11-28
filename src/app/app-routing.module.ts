@@ -14,8 +14,7 @@ const routes: Routes = [
     path: 'cart',
     component: ShoppingCartComponent,
     data: { title: 'Shopping Cart' }
-  },
-  {
+  },{
     path: 'details/:id',
     component: ProductDetailComponent,
     data: { title: 'Product Details' }

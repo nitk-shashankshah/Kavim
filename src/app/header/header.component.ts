@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartServiceService } from '../cart-service.service';
-import { Subscription } from 'rxjs';
+//import { CartServiceService } from '../cart-service.service';
+//import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -10,14 +10,14 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   responsive:boolean=false;
-  subscription: Subscription;
+  //subscription: Subscription;
   cartItems:any=0;
-  constructor(private cartService:CartServiceService) { 
-    this.subscription = this.cartService.cartItemsService$.subscribe(
+  constructor(/*private cartService:CartServiceService*/) { 
+    /*this.subscription = this.cartService.cartItemsService$.subscribe(
       (data:any) => {
         this.cartItems = data;       
       }
-    );
+    );*/
   }
 
   ngOnInit() {
