@@ -11,7 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from  '@angular/forms';
 import { CartServiceService } from './cart-service.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,  HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,10 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [CartServiceService],
+  providers: [
+    CartServiceService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
