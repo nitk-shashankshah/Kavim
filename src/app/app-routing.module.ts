@@ -6,6 +6,11 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 
 const routes: Routes = [
   {
+    path: '',
+    component: HomeComponent,
+    data: { title: 'Home' }
+  },
+  {
     path: 'index',
     component: HomeComponent,
     data: { title: 'Home' }

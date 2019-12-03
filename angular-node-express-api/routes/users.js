@@ -7,8 +7,8 @@ var router = express.Router();
 var pool  = mysql.createPool({
   connectionLimit : 10, // default = 10
   host: "localhost",
-  user: "root",
-  password: "",
+  user: "admin",
+  password: "admin",
   database: "kavim"
 });
 
