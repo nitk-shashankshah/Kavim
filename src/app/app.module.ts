@@ -12,6 +12,8 @@ import { FormsModule } from  '@angular/forms';
 import { CartServiceService } from './cart-service.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HttpClientModule,  HttpClient } from '@angular/common/http';
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { HttpClientModule,  HttpClient } from '@angular/common/http';
     AppRoutingModule,
     AngularFontAwesomeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CartServiceService,
