@@ -14,6 +14,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { HttpClientModule,  HttpClient } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyFilterPipe } from './my-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProductComponent,
     ShoppingCartComponent,
     FooterComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    MyFilterPipe
   ],
   imports: [
     BrowserModule,
