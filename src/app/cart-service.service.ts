@@ -32,7 +32,15 @@ export class CartServiceService {
 
   removeItem(i) {
     this.cart.splice(i, 1);
-    this.cartItems.next(this.cart.length);
+    var len=0;
+    this.cart.map(x => len += x.qty);
+    this.cartItems.next(len);
+  }
+
+  updateCart(){
+    var len=0;
+    this.cart.map(x => len += x.qty);
+    this.cartItems.next(len);
   }
 
   refreshTotal() {
@@ -53,7 +61,10 @@ export class CartServiceService {
     if (flg==true) {
       this.cart.push(obj);
       this.success.next(true);
-      this.cartItems.next(this.cart.length);
+      //this.cartItems.next(this.cart.length);
+      var len=0;
+      this.cart.map(x => len += x.qty);
+      this.cartItems.next(len);
     } else {
       this.success.next(false);
     }

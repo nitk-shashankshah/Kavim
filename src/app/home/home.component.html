@@ -10,16 +10,17 @@
 
 <div class="content">
   <div class="heading">
-    <h2 style="float:left;text-align:center;width:calc(100% - 250px);padding-top:0px;text-align:center;">CATALOG</h2>
-    <div style="float: right;width:250px;">  
-    Price
-    <mat-slider label="Price" [(ngModel)]="fv" min="300" max="3000" step="1" value="1000"></mat-slider>
-    {{fv}}
+    <h2 style="text-align:center;padding-top:20px;text-align:center;">CATALOG</h2>
+    <div style="clear:both;padding:24px;text-align: center;font-size: 14px;color: #333;">  
+    Price&nbsp;&nbsp;&nbsp;
+    <!--<mat-slider label="Price" [(ngModel)]="fv" min="300" max="3000" step="1" value="1000"></mat-slider>-->
+    <mat-slider thumbLabel [(ngModel)]="minRange" tickInterval="1000" min="0" max="1000"></mat-slider>    
+    <mat-slider thumbLabel [(ngModel)]="fv" tickInterval="1000" min="2000" max="3000"></mat-slider>    
     </div>
     <div style="clear:both;"></div>
-  </div>  
+  </div>
   
   <div class="row">
-    <app-product *ngFor="let product of products | myfilter: fv" imgInput={{product.imageUrl}} description={{product.description}} price={{product.price}} id={{product.id}}></app-product>    
+    <app-product *ngFor="let product of products | myfilter: minRange : fv " imgInput={{product.imageUrl}} description={{product.description}} price={{product.price}} id={{product.id}}></app-product>    
   </div>
 </div>

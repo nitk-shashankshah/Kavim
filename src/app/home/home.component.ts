@@ -11,15 +11,15 @@ import { HttpClient } from "@angular/common/http";
 export class HomeComponent implements OnInit {
 	//private subscriber: any;
   products: any = [];
-  fv = 1000;
-
+  fv = 3000;
+  minRange = 0;
   constructor(private http: HttpClient) {
 
   }
 
   ngOnInit() {
     //this.subscriber = this.route.params.subscribe(params => {       
-      this.http.get('/api/v1/users').subscribe((data:any) => {
+      this.http.get('http://kavim.co.in/api/v1/users').subscribe((data:any) => {
         this.products = data;   
       });
     //});

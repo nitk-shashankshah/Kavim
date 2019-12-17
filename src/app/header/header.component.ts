@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   constructor(private cartService:CartServiceService) { 
     this.subscription = this.cartService.cartItemsService$.subscribe(
       (data:any) => {
-        this.cartItems = data;       
+        this.cartItems = data;
       }
     );
   }

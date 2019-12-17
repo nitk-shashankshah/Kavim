@@ -124,6 +124,10 @@
   width:100%;
   clear:both;
 }
+.mat-slider {
+  position:absolute!important;
+  margin-top: -16px!important;
+}
 .heading h2{
   font-size: 20px;
   padding-top:10px;
