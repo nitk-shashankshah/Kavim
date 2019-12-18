@@ -15,7 +15,8 @@ import { HttpClientModule,  HttpClient } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyFilterPipe } from './my-filter.pipe';
-
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,9 @@ import { MyFilterPipe } from './my-filter.pipe';
     FormsModule,
     HttpClientModule,
     MatSliderModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
     BrowserAnimationsModule
   ],
   providers: [

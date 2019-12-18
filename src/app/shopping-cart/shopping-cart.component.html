@@ -27,7 +27,7 @@
           <i class="fa fa-times"></i>
         </div>
         <div class="product_details">
-          <input type="number" min="1" max="5" [(ngModel)]="product.qty" class="numberBox" (keyup)="calculateTotal($event)">
+          <input type="number" min="1" max="5" [(ngModel)]="product.qty" class="numberBox" (blur)="calculateTotal($event)" (keyup)="calculateTotal($event)">
         </div>
       </div>
       <div class="amount">       
