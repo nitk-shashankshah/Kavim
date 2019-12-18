@@ -14,8 +14,8 @@
     <div style="clear:both;height:54px;text-align: left;font-size: 14px;color: #333;">  
     <div style="float:left;padding-top: 20px;"><b>&nbsp;&nbsp;Price&nbsp;&nbsp;</b></div>
     <div style="float:left;width:150px;padding-top: 20px;">
-    <mat-slider thumbLabel [(ngModel)]="minRange" tickInterval="1000" min="0" max="1000"></mat-slider>    
-    <mat-slider thumbLabel [(ngModel)]="fv" tickInterval="1000" min={{minRange+300}} max="3000"></mat-slider>
+    <mat-slider thumbLabel [(ngModel)]="minRange" tickInterval="1000" min="0" max="3000" (change)="resetMinMax()"></mat-slider>    
+    <mat-slider thumbLabel [(ngModel)]="fv" tickInterval="1000" min="0" max="3000" (change)="resetMinMax()"></mat-slider>
     </div>        
     <div style="float:left;padding-top: 20px;">Min: {{minRange}} INR &nbsp; Max: {{fv}} INR</div>
     <div style="float:right;width:200px;">
@@ -26,7 +26,7 @@
                 {{order.viewValue}}
               </mat-option>
             </mat-select>
-        </mat-form-field> 
+        </mat-form-field>
     </div>
     </div>
     <div style="clear:both;"></div>

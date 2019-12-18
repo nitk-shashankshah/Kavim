@@ -22,6 +22,13 @@ export class HomeComponent implements OnInit {
 
   }
 
+  resetMinMax(){
+    if (this.minRange > this.fv){
+      this.fv = this.minRange+100;
+      if (this.fv>3000)
+        this.fv=3000;
+    }
+  }
   ngOnInit() {
     //this.subscriber = this.route.params.subscribe(params => {       
       this.http.get('http://kavim.co.in/api/v1/users').subscribe((data:any) => {
