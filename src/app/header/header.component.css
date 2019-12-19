@@ -49,8 +49,8 @@
 .topnav {
   width:100%;
   font-family: "Segoe UI", "Verdana";
-  border-top:1px solid #dadada;
-  border-bottom:1px solid #dadada;
+  border-top:1px solid #efefef;
+  border-bottom:1px solid #efefef;
   min-height:53px;
   margin-bottom:10px;
 }

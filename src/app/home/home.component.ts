@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
     }
   }
   ngOnInit() {
-    //this.subscriber = this.route.params.subscribe(params => {       
+    //this.subscriber = this.route.params.subscribe(params => {
       this.http.get('http://kavim.co.in/api/v1/users').subscribe((data:any) => {
         this.products = data;   
       });
