@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyFilterPipe } from './my-filter.pipe';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
+import { ProductListComponent } from './product-list/product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
     ShoppingCartComponent,
     FooterComponent,
     ProductDetailComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

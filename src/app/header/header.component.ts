@@ -11,11 +11,18 @@ export class HeaderComponent implements OnInit {
 
   responsive:boolean=false;
   subscription: Subscription;
+  menuSubscription: Subscription;
+
   cartItems:any=0;
   constructor(private cartService:CartServiceService) { 
     this.subscription = this.cartService.cartItemsService$.subscribe(
       (data:any) => {
         this.cartItems = data;
+      }
+    );
+    this.menuSubscription = this.cartService.showMenu$.subscribe(
+      (data:any) => {
+        this.responsive = data;
       }
     );
   }
@@ -24,6 +31,9 @@ export class HeaderComponent implements OnInit {
   }
 
   myFunction() {
-    this.responsive = !this.responsive ;
+    if (!this.responsive)
+      this.cartService.displayMenu();
+    else
+      this.cartService.hideMenu();
   }
 }

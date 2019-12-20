@@ -4,12 +4,8 @@
 <input type="text" placeholder="Search"> 
 <button type="submit" class="searchBtn"><i class="fa fa-search"></i></button>
 </div>
-<div style="float:right;margin-top:5px;"> 
-  <!--<ul class="right-justify">
-    <li><a routerLink="/xz" routerLinkActive="active"><i style="font-size:24px;" class="fa fa-shopping-cart"></i></a></li>    
-  </ul>-->
+<div style="float:right;margin-top:5px;">
   <ul class="flex nav-ul">
-    <!--<li><a href="#"><i class="fa fa-user" style="font-size: 24px;color:#5c5c5c;"></i> <span style="line-height: 24px;"></span></a></li>-->
     <li><a routerLink="/cart"><i class="fa fa-shopping-cart" style="font-size: 24px;color:#5c5c5c;" [attr.myValue]="cartItems"></i></a></li>
   </ul>
 </div>

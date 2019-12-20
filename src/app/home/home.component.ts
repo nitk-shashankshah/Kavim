@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 //import { ActivatedRoute } from '@angular/router';
+import { CartServiceService } from '../cart-service.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
     {value: '1', viewValue: 'Ascending'},
     {value: '-1', viewValue: 'Descending'}
   ];
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private cartService:CartServiceService) {
 
   }
 
@@ -30,6 +31,8 @@ export class HomeComponent implements OnInit {
     }
   }
   ngOnInit() {
+    
+    this.cartService.hideMenu();
     //this.subscriber = this.route.params.subscribe(params => {
       this.http.get('http://kavim.co.in/api/v1/users').subscribe((data:any) => {
         this.products = data;   

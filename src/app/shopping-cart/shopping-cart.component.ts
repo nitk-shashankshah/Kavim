@@ -48,6 +48,8 @@ export class ShoppingCartComponent implements OnInit {
     this.refreshTotal();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cartService.hideMenu();
+  }
 
 }
