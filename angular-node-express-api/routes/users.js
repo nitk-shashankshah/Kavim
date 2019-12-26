@@ -14,9 +14,24 @@ var pool  = mysql.createPool({
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  let pg = req.query.page;
+  let lmt = req.query.limit;
   pool.getConnection(function (err, con) {
     if (err) throw err;
-    con.query("SELECT * FROM products", function (err, result, fields) {
+    con.query("SELECT * FROM products limit " + pg + ", " + lmt, function (err, result, fields) {
+      if (err) throw err;
+      res.json(result);
+    });
+  });
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+});
+
+/* GET users listing. */
+router.get('/categories', function(req, res, next) {
+  pool.getConnection(function (err, con) {
+    if (err) throw err;
+    con.query("SELECT DISTINCT category FROM products", function (err, result, fields) {
       if (err) throw err;
       res.json(result);
     });

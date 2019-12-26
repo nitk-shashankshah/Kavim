@@ -1,6 +1,10 @@
 //nvm install v6.8.0
+//nvm use node
+//npm install
+//nvm uninstall v5.7.1 && nvm install v5.7.1
+//nvm install 10.14.0
 //nvm install node
-//nvm use --delete-prefix v13.1.0
+//node app.js
 //npm start
 
 import { Component } from '@angular/core';

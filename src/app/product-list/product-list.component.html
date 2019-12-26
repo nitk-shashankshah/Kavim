@@ -1,0 +1,41 @@
+<div class="content">
+    <div class="heading">
+      <div style="clear:both;height:54px;text-align: left;font-size: 14px;color: #333;">
+      <div style="float:left;font-size:11px;width: 140px;margin-top: 5px;">    
+        <mat-slider thumbLabel [(ngModel)]="minRange" tickInterval="1000" min="0" max="3000" (change)="resetMinMax()"></mat-slider>
+      </div>
+      <div style="float:left;padding-top: 18px;font-size:11px;margin-top: 5px;">Min: {{minRange}} INR</div>      
+      <div style="float:left;font-size:11px;width: 140px;margin-left: 10px;margin-top: 5px;">          
+        <mat-slider thumbLabel [(ngModel)]="fv" tickInterval="1000" min="0" max="3000" (change)="resetMinMax()"></mat-slider>
+      </div>
+      <div style="float:left;padding-top: 18px;font-size:11px;margin-top: 5px;">Max: {{fv}} INR</div>
+      <div style="float:right;">      
+          <button class="navBtn" (click)="loadPrevious()"><i class="fa fa-angle-double-left"></i></button>&nbsp;
+          <button class="navBtn" (click)="loadNext()"><i class="fa fa-angle-double-right"></i></button>
+      </div>
+      <div style="float:right;width:400px;">
+          <mat-form-field style="margin:0px;padding:0px;">
+              <mat-label>Category</mat-label>
+              <mat-select [(ngModel)]="category">
+                <mat-option *ngFor="let each of categories" [value]="each.category">
+                  {{each.category}}
+                </mat-option>
+              </mat-select>
+          </mat-form-field> &nbsp;   
+          <mat-form-field style="margin:0px;padding:0px;">
+              <mat-label>Price</mat-label>
+              <mat-select [(ngModel)]="order">
+                <mat-option *ngFor="let order of orders" [value]="order.value">
+                  {{order.viewValue}}
+                </mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>        
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+    
+    <div class="row">
+      <app-product *ngFor="let product of products | myfilter: minRange : fv : order : category" imgInput={{product.imageUrl}} description={{product.description}} price={{product.price}} id={{product.id}}></app-product>    
+    </div>
+  </div>
