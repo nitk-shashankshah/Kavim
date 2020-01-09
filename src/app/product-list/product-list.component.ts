@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
   fv = 3000;
   category = "All";
   order = 1;
-  currentPage=0;
+  currentPage=1;
   minRange = 0;
   orders: any = [
     {value: '1', viewValue: 'Ascending'},
@@ -31,30 +31,27 @@ export class ProductListComponent implements OnInit {
     }
   }
   loadNext(){
-    this.currentPage+=10;
-    this.http.get('http://kavim.co.in/api/v1/users?page='+this.currentPage+'&limit=10').subscribe((data:any) => {
+    this.currentPage+=1;
+    this.http.get('http://kavim.co.in/api/v1/products?page='+this.currentPage).subscribe((data:any) => {
       this.products = data;   
     });
   }
   loadPrevious(){    
-    this.currentPage-=10;
-    if (this.currentPage<0)
-      this.currentPage=0;
-    this.http.get('http://kavim.co.in/api/v1/users?page='+this.currentPage+'&limit=10').subscribe((data:any) => {
+    this.currentPage-=1;
+    if (this.currentPage<1)
+      this.currentPage=1;
+    this.http.get('http://kavim.co.in/api/v1/products?page='+this.currentPage).subscribe((data:any) => {
       this.products = data;   
     });
   }
   ngOnInit() {
-    //this.subscriber = this.route.params.subscribe(params => {
       this.cartService.hideMenu();
-      this.http.get('http://kavim.co.in/api/v1/users?page=0&limit=10').subscribe((data:any) => {
+      this.http.get('http://kavim.co.in/api/v1/products?page=1').subscribe((data:any) => {
         this.products = data;   
       });
-      this.http.get('http://kavim.co.in/api/v1/users/categories').subscribe((data:any) => {
+      this.http.get('http://kavim.co.in/api/v1/products/categories').subscribe((data:any) => {
         this.categories = data;
-        this.categories.unshift({"category":"All"});           
+        this.categories.unshift("All");           
       });
-    //});
   }
-
 }

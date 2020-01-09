@@ -17,8 +17,8 @@
           <mat-form-field style="margin:0px;padding:0px;">
               <mat-label>Category</mat-label>
               <mat-select [(ngModel)]="category">
-                <mat-option *ngFor="let each of categories" [value]="each.category">
-                  {{each.category}}
+                <mat-option *ngFor="let each of categories" [value]="each">
+                  {{each}}
                 </mat-option>
               </mat-select>
           </mat-form-field> &nbsp;   

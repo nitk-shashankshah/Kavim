@@ -36,12 +36,12 @@ export class HomeComponent implements OnInit {
     
     this.cartService.hideMenu();
     //this.subscriber = this.route.params.subscribe(params => {
-      this.http.get('http://kavim.co.in/api/v1/users?page=0&limit=10').subscribe((data:any) => {
+      this.http.get('http://kavim.co.in/api/v1/products?page=1').subscribe((data:any) => {
         this.products = data;   
       });
-      this.http.get('http://kavim.co.in/api/v1/users/categories').subscribe((data:any) => {
+      this.http.get('http://kavim.co.in/api/v1/products/categories').subscribe((data:any) => {
         this.categories = data;
-        this.categories.unshift({"category":"All"});
+        this.categories.unshift("All");
       });
     //});
   }
