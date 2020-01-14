@@ -11,7 +11,7 @@ export class ProductListComponent implements OnInit {
 
   products: any = [];
   categories:any = [];
-  fv = 3000;
+  fv = 4000;
   category = "All";
   order = 1;
   currentPage=1;

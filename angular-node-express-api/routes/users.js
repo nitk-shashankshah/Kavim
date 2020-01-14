@@ -14,13 +14,13 @@ var currentPage = 1;
 router.use(orm.express("mysql://admin:admin@localhost/kavim", {
   define: function (db, models, next) {
     models.products = db.define("products", {
-    id : Number,
-    name: String,
-    description: String,
-    price: Number,
-    imageUrl: String
-  });
-  next();
+      id : Number,
+      name: String,
+      description: String,
+      price: Number,
+      imageUrl: String
+    });
+    next();
   }
 }));
 
