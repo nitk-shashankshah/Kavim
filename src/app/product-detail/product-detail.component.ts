@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 //import { ActivatedRoute } from '@angular/router';
 //import { CartServiceService } from '../cart-service.service';
 import { Location } from '@angular/common';
+import {ActivatedRoute} from '@angular/router';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-product-detail',
@@ -12,8 +14,10 @@ export class ProductDetailComponent implements OnInit {
 
   id: string;
   slideIndex:any = 1;
+  productImages:any=[];
   private sub: any;
-  constructor(private location: Location) {
+  constructor(private location: Location,  private route: ActivatedRoute, private http: HttpClient) {
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
   plusSlides(n) {
@@ -41,10 +45,13 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    this.http.get('http://kavim.co.in/api/v1/products/images?id='+this.id).subscribe((data:any) => {
+      this.productImages = data;   
+    });
+
   }
 
-  ngOnDestroy() {
-  }
   addToCart(){
 
   }

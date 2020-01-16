@@ -9,8 +9,8 @@ export class MyFilterPipe implements PipeTransform {
             return items;
         }
         // filter items array, items which match and return true will be
-        // kept, false will be filtered out
-       
+        // kept, false will be filtered out    
+
         items = items.filter(item => (category==="All") ? true : (item.category === category));
 
         items = items.sort(function(a, b){return (order > 0) ? (a.price - b.price) : (b.price - a.price)});

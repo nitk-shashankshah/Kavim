@@ -11,7 +11,7 @@ export class ProductListComponent implements OnInit {
 
   products: any = [];
   categories:any = [];
-  fv = 4000;
+  fv = 5000;
   category = "All";
   order = 1;
   currentPage=1;
@@ -26,8 +26,8 @@ export class ProductListComponent implements OnInit {
   resetMinMax(){
     if (this.minRange > this.fv){
       this.fv = this.minRange+100;
-      if (this.fv>3000)
-        this.fv=3000;
+      if (this.fv>5000)
+        this.fv=5000;
     }
   }
   loadNext(){
@@ -53,5 +53,5 @@ export class ProductListComponent implements OnInit {
         this.categories = data;
         this.categories.unshift("All");           
       });
-  }
+  }  
 }
