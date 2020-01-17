@@ -1,5 +1,5 @@
 <div class="product">
-    <img src={{imgInput}} >
+    <img src={{imgInput}} (load)="onImageLoad()">
     <div class="details">
       {{description}}
     </div>  
@@ -12,3 +12,10 @@
       <a routerLink="/details/{{id}}"  routerLinkActive="active">VIEW DETAILS</a>
     </div>
 </div>
+<ngx-spinner
+type="line-scale-party"
+size="large"
+bdColor="rgba(255,255,255,1)"
+color="rgba(100,149,237,1)"
+>
+</ngx-spinner>

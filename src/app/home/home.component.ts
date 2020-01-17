@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 //import { ActivatedRoute } from '@angular/router';
 import { CartServiceService } from '../cart-service.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 
 @Component({
@@ -15,14 +16,23 @@ export class HomeComponent implements OnInit {
   categories: any = [];
   category:string = "All";
   fv = 3000;
+  isLoading = true;
   order = 1;
+  totalImages = 2;
   minRange = 0;
   orders: any = [
     {value: '1', viewValue: 'Ascending'},
     {value: '-1', viewValue: 'Descending'}
   ];
-  constructor(private http: HttpClient, private cartService:CartServiceService) {
+  constructor(private http: HttpClient, private cartService:CartServiceService,  private spinner: NgxSpinnerService) {
+    this.isLoading = true;
+  }
 
+  onImageLoad() {
+    this.isLoading = false;
+    this.totalImages--;
+    if (this.totalImages==0)
+      this.spinner.hide();
   }
 
   resetMinMax(){
@@ -33,11 +43,13 @@ export class HomeComponent implements OnInit {
     }
   }
   ngOnInit() {
-    
+    this.isLoading = true;
+    this.spinner.show();
     this.cartService.hideMenu();
     //this.subscriber = this.route.params.subscribe(params => {
       this.http.get('http://kavim.co.in/api/v1/products?page=1').subscribe((data:any) => {
         this.products = data;   
+        this.totalImages+= this.products.length;
       });
       this.http.get('http://kavim.co.in/api/v1/products/categories').subscribe((data:any) => {
         this.categories = data;

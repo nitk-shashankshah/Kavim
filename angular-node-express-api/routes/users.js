@@ -8,7 +8,7 @@ var orm = require('orm');
 var totalRec = 0,
 pageSize  = 10,
 pageCount = 0;
-var start       = 0;
+var start = 0;
 var currentPage = 1;
 
 router.use(orm.express("mysql://admin:admin@localhost/kavim?pool=true", {

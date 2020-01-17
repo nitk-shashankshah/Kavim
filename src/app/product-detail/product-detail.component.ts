@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
 import { HttpClient } from "@angular/common/http";
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-product-detail',
@@ -15,8 +16,11 @@ export class ProductDetailComponent implements OnInit {
   id: string;
   slideIndex:any = 1;
   productImages:any=[];
+  counter:any=1;
+  isLoading:boolean=false;
+
   private sub: any;
-  constructor(private location: Location,  private route: ActivatedRoute, private http: HttpClient) {
+  constructor(private location: Location,  private route: ActivatedRoute, private http: HttpClient,   private spinner: NgxSpinnerService) {
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -43,13 +47,19 @@ export class ProductDetailComponent implements OnInit {
     slides[this.slideIndex-1].setAttribute("style","display:block");  
     dots[this.slideIndex-1].className += " active";
   }
+  
+  onImageLoad(){
+    this.counter--;
+    if (this.counter==0)
+      this.spinner.hide();
+  }
 
-  ngOnInit() {
-    
+  ngOnInit() {    
     this.http.get('http://kavim.co.in/api/v1/products/images?id='+this.id).subscribe((data:any) => {
-      this.productImages = data;   
+      this.productImages = data;
+      this.counter = this.productImages.length;
     });
-
+    this.spinner.show();
   }
 
   addToCart(){

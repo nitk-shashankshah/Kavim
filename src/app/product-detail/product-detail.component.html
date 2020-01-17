@@ -8,7 +8,7 @@
 
   <div class="mySlides" *ngFor="let prodImg of productImages ; let i = index">
     <div class="numbertext">{{i+1}} / 3</div>
-    <img src={{prodImg.imageURL}}>
+    <img src={{prodImg.imageURL}} (load)="onImageLoad()">
   </div>
   
   <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
@@ -43,3 +43,10 @@
     </div>
   </div>  
 </div>
+<ngx-spinner
+type="line-scale-party"
+size="large"
+bdColor="rgba(255,255,255,1)"
+color="rgba(100,149,237,1)"
+>
+</ngx-spinner>

@@ -1,9 +1,9 @@
 <div class="banner">  
-    <img src="../../assets/images/title.png">
+    <img src="../../assets/images/title.png" (load)="onImageLoad()">
 </div>
 <div class="filters">
     <h2>FEATURED PRODUCT</h2>
-    <img src="../../assets/images/banner.jpg" style="width:100%;margin-top:0px;z-index:0">
+    <img src="../../assets/images/banner.jpg" style="width:100%;margin-top:0px;z-index:0" (load)="onImageLoad()">
     <p>Rajasthani salwars and kurtis </p>      
     <a class="view" routerLink="/cart" routerLinkActive="active">VIEW COLLECTION</a>   
 </div>
@@ -25,3 +25,11 @@
   </div>
  
 </div>
+
+<ngx-spinner
+type="line-scale-party"
+size="large"
+bdColor="rgba(255,255,255,1)"
+color="rgba(100,149,237,1)"
+>
+</ngx-spinner>
