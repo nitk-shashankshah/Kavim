@@ -3,7 +3,8 @@ import { HttpClient } from "@angular/common/http";
 //import { ActivatedRoute } from '@angular/router';
 import { CartServiceService } from '../cart-service.service';
 import { NgxSpinnerService } from "ngx-spinner";
-
+import  *  as  data  from  '../products.json';
+import  *  as  categories  from  '../categories.json';
 
 @Component({
   selector: 'app-home',
@@ -47,14 +48,9 @@ export class HomeComponent implements OnInit {
     this.spinner.show();
     this.cartService.hideMenu();
     //this.subscriber = this.route.params.subscribe(params => {
-      this.http.get('http://kavim.co.in/api/v1/products?page=1').subscribe((data:any) => {
-        this.products = data;   
-        this.totalImages+= this.products.length;
-      });
-      this.http.get('http://kavim.co.in/api/v1/products/categories').subscribe((data:any) => {
-        this.categories = data;
-        this.categories.unshift("All");
-      });
+    this.products = data["default"]["products"];   
+    this.totalImages+= this.products.length;
+    this.categories = data["default"]["categories"];     
     //});
   }
 }

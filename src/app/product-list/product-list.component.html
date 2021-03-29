@@ -14,19 +14,19 @@
           <mat-form-field style="margin:0px;padding:0px;width:100px;">
               <mat-label>Category</mat-label>
               <mat-select [(ngModel)]="category">
-                <mat-option *ngFor="let each of categories" [value]="each">
-                  {{each}}
+                <mat-option *ngFor="let each of categories" [value]="each.id">
+                  {{each.category}}
                 </mat-option>
               </mat-select>
           </mat-form-field> &nbsp;   
-          <mat-form-field style="margin:0px;padding:0px;width:100px;">
+          <!--<mat-form-field style="margin:0px;padding:0px;width:100px;">
               <mat-label>Price</mat-label>
               <mat-select [(ngModel)]="order">
                 <mat-option *ngFor="let order of orders" [value]="order.value">
                   {{order.viewValue}}
                 </mat-option>
               </mat-select>
-          </mat-form-field>
+          </mat-form-field>-->
       </div>    
       <div class="pagination">      
         <button class="navBtn" (click)="loadPrevious()"><i class="fa fa-angle-double-left"></i></button>&nbsp;

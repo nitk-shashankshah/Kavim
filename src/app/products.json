@@ -1,0 +1,36 @@
+{
+    "products":[
+        {
+            "id":1,
+            "imageUrl": "http://localhost:4200/assets/images/prod-1-1.jpg",
+            "name": "Rajasthani Hand Printed Kurta",
+            "description": "Rajasthani Hand Printed Kurta",
+            "price": 500,
+            "categoryId": 1
+        },
+        {
+            "id":2,
+            "imageUrl": "http://localhost:4200/assets/images/prod-2-1.jpg",
+            "name": "Silk Saree",
+            "description": "Hand printed silk Sarees",
+            "price": 5000,
+            "categoryId": 2
+        },
+        {
+            "id":3,
+            "imageUrl": "http://localhost:4200/assets/images/prod-3.jpg",
+            "name": "Silk Saree",
+            "description": "Hand printed silk Sarees",
+            "price": 5000,
+            "categoryId": 2
+        },
+        {
+            "id":4,
+            "imageUrl": "http://localhost:4200/assets/images/prod-4-1.jpg",
+            "name": "Silk Saree",
+            "description": "Hand printed silk Sarees",
+            "price": 5000,
+            "categoryId": 2
+        }
+    ]
+}

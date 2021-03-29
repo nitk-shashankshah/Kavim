@@ -1,0 +1,28 @@
+{
+    "categories":[
+        {
+            "id":0,
+            "category": "All"            
+        },
+        {
+            "id":2,
+            "category": "Salwars"            
+        },
+        {
+            "id":3,
+            "category": "Juttis"            
+        },
+        {
+            "id":1,
+            "category": "Kurtas"            
+        },
+        {
+            "id":2,
+            "category": "Sarees"            
+        },
+        {
+            "id":3,
+            "category": "Lehengas"            
+        }
+    ]
+}

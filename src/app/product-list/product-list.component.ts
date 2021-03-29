@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { CartServiceService } from '../cart-service.service';
+import  *  as  data  from  '../products.json';
+import  *  as  categories  from  '../categories.json';
 
 @Component({
   selector: 'app-product-list',
@@ -32,26 +34,18 @@ export class ProductListComponent implements OnInit {
   }
   loadNext(){
     this.currentPage+=1;
-    this.http.get('http://kavim.co.in/api/v1/products?page='+this.currentPage).subscribe((data:any) => {
-      this.products = data;   
-    });
+    this.products = data["default"]["products"]; 
   }
   loadPrevious(){    
     this.currentPage-=1;
-    if (this.currentPage<1)
+    if (this.currentPage<1){
       this.currentPage=1;
-    this.http.get('http://kavim.co.in/api/v1/products?page='+this.currentPage).subscribe((data:any) => {
-      this.products = data;   
-    });
+      this.products = data;
+    }      
   }
   ngOnInit() {
       this.cartService.hideMenu();
-      this.http.get('http://kavim.co.in/api/v1/products?page=1').subscribe((data:any) => {
-        this.products = data;   
-      });
-      this.http.get('http://kavim.co.in/api/v1/products/categories').subscribe((data:any) => {
-        this.categories = data;
-        this.categories.unshift("All");           
-      });
+      this.products = data["default"]["products"];   
+      this.categories = categories["default"]["categories"];
   }  
 }
